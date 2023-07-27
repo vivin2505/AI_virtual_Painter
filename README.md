@@ -18,7 +18,9 @@ The canvas offers color selection and drawing functionality. By positioning your
 
 ## Demo
 
-![Virtual Drawing Demo](demo.gif)
+
+https://github.com/MohamedAlaouiMhamdi/AI_virtual_Painter/assets/98537138/1fabdf4a-9713-4ab9-9e43-07568056db96
+
 
 ## Requirements
 
