@@ -1,0 +1,105 @@
+:root {
+  --bg: #f0f6f2;
+  --text: #1c1e22;
+  --accent: #2b5f4d;
+  --card-bg: #ffffff;
+}
+[data-theme="dark"] {
+  --bg: #1a1c1f;
+  --text: #e5e5e5;
+  --accent: #3b8c6b;
+  --card-bg: #2a2c2f;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Poppins',sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  scroll-behavior: smooth;
+  transition: background .3s, color .3s;
+}
+a { color: var(--accent); text-decoration: none; }
+
+nav {
+  display:flex; justify-content:center; gap:2rem;
+  padding:1rem; background: rgba(255,255,255,0.8);
+  backdrop-filter: blur(10px);
+  position:sticky; top:0; z-index:100;
+}
+nav a {
+  font-weight:600;
+  position:relative;
+}
+nav a::after {
+  content:""; position:absolute;
+  left:0; bottom:-5px;
+  width:0; height:3px;
+  background: var(--accent);
+  transition: width .3s;
+}
+nav a:hover::after { width:100%; }
+
+.hero {
+  text-align:center; padding:5rem 1rem;
+  background: linear-gradient(135deg, #d9ead3, #a4c2a5);
+  color:#1c1e22;
+}
+.profile-pic {
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  border:4px solid #fff;
+  object-fit:cover;
+  margin-bottom:1rem;
+  box-shadow:0 8px 16px rgba(0,0,0,0.15);
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1.5rem;
+  margin:2rem 1rem;
+}
+.card {
+  background: var(--card-bg);
+  padding:1.5rem; border-radius:12px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.1);
+  transition: transform .3s, box-shadow .3s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow:0 16px 32px rgba(0,0,0,0.2);
+}
+.bar {
+  margin-top:.5rem;
+  background: #ddd;
+  height:12px; border-radius:6px;
+}
+.bar div {
+  height:100%; background: var(--accent);
+  border-radius:6px;
+  transition: width 1s ease-in-out;
+}
+
+section {
+  margin:2rem auto;
+  max-width:800px;
+  text-align:center;
+}
+section h2 {
+  font-size:2.2rem;
+  color: var(--accent);
+  margin-bottom:1rem;
+}
+
+footer {
+  text-align:center;
+  padding:1.5rem 0;
+  background: var(--accent);
+  color:#fff;
+}
+#mode-toggle {
+  position:fixed; top:1rem; right:1rem;
+  background:none; border:none;
+  font-size:1.5rem; cursor:pointer;
+}
